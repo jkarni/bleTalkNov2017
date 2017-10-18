@@ -1,0 +1,66 @@
+-- This file has been generated from package.yaml by hpack version 0.17.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:                bleTalkNov2017
+version:             0.1.0.0
+homepage:            https://github.com/jkarni/bleTalkNov2017#readme
+bug-reports:         https://github.com/jkarni/bleTalkNov2017/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Julian K. Arni
+maintainer:          jkarni@gmail.com
+copyright:           (c) 2017 Julian K. Arni
+category:            Music
+build-type:          Simple
+cabal-version:       >= 1.10
+
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/jkarni/bleTalkNov2017
+
+library
+  hs-source-dirs:
+      src
+  exposed-modules:
+      Lib
+  other-modules:
+      Lib.Application
+      Lib.Synths
+      Paths_bleTalkNov2017
+  build-depends:
+      base >= 4.7 && < 5
+    , ble >= 0.4 && < 0.5
+    , process >= 1.4 && < 1.5
+    , vivid
+  default-language: Haskell2010
+
+executable exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >= 4.7 && < 5
+    , ble >= 0.4 && < 0.5
+    , process >= 1.4 && < 1.5
+    , vivid
+    , bleTalkNov2017
+  default-language: Haskell2010
+
+test-suite bleTalkNov2017-test
+  type: exitcode-stdio-1.0
+  hs-source-dirs:
+      test
+  main-is: Spec.hs
+  build-depends:
+      base >= 4.7 && < 5
+    , ble >= 0.4 && < 0.5
+    , process >= 1.4 && < 1.5
+    , vivid
+    , bleTalkNov2017
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  default-language: Haskell2010

@@ -1,0 +1,11 @@
+flags: {}
+extra-package-dbs: []
+packages:
+- .
+extra-deps:
+- ble-0.4.1
+- d-bus-0.1.7
+- vivid-0.3.0.2
+- vivid-osc-0.3.0.0
+- vivid-supercollider-0.3.0.0
+resolver: lts-9.9

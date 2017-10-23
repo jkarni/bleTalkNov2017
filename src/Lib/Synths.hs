@@ -22,4 +22,5 @@ runSynth :: forall arg1. (KnownSymbol arg1)
   => Synth '[arg1] -> IORef [Float] -> IO ()
 runSynth theSynth argRef = do
   args <- take 12 <$> readIORef argRef
-  forM_ args $ \arg -> wait (1/4) >> set theSynth (I arg :: I arg1)
+  forM_ args $ \arg -> wait (1/4) >> set theSynth (toI arg :: I arg1)
+  runSynth theSynth argRef
